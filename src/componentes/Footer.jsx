@@ -1,5 +1,5 @@
 import React from 'react';
-import { FaFacebookF, FaTwitter, FaInstagram } from 'react-icons/fa'; // Asegúrate de instalar react-icons
+import { FaInstagram } from 'react-icons/fa'; // Asegúrate de instalar react-icons
 
 function Footer() {
   return (
@@ -8,16 +8,11 @@ function Footer() {
         {/* Información principal */}
         <p className="mb-4">&copy; {new Date().getFullYear()} Sabor Cubano - Todos os direitos reservados.</p>
 
-        {/* Enlaces de redes sociales */}
+        {/* Enlace a Instagram */}
         <div className="flex justify-center space-x-4 mb-4">
-          <a href="https://facebook.com" className="text-gray-700 hover:text-verdeLima transition-colors duration-300" aria-label="Facebook">
-            <FaFacebookF />
-          </a>
-          <a href="https://twitter.com" className="text-gray-700 hover:text-verdeLima transition-colors duration-300" aria-label="Twitter">
-            <FaTwitter />
-          </a>
-          <a href="https://instagram.com" className="text-gray-700 hover:text-verdeLima transition-colors duration-300" aria-label="Instagram">
-            <FaInstagram />
+          <a href="https://www.instagram.com/saborcubano10/" target="_blank" rel="noopener noreferrer" className="text-gray-700 flex hover:text-verdeLima transition-colors duration-300" aria-label="Instagram">
+            <FaInstagram size={24} />
+            <span className="ml-2 font-semibold">Siga-nos no Instagram para mais delícias</span>
           </a>
         </div>
 
