@@ -44,14 +44,14 @@ function Header() {
      
        {/* Menú lateral */}
        <aside className={`fixed inset-0 bg-gray-800 text-white p-6 transform transition-transform ${isOpen ? 'translate-x-0' : 'translate-x-full'} ease-in-out duration-300 z-50`}>
-        <button onClick={toggleMenu} className="absolute top-4 right-1 text-2xl">
+        <button onClick={toggleMenu} className="absolute top-4 text-2xl">
           <FaTimes />
         </button>
-        <ul className="mt-10 space-y-6 text-center">
-          <li><a href="#inicio" className="block text-2xl font-semibold hover:text-verdeLima">Inicio</a></li>
-          <li><a href="#servicios" className="block text-2xl font-semibold hover:text-verdeLima">Servicios</a></li>
-          <li><a href="#testimonios" className="block text-2xl font-semibold hover:text-verdeLima">Testimonios</a></li>
-          <li><a href="#contacto" className="block text-2xl font-semibold hover:text-verdeLima">Contacto</a></li>
+        <ul className="mt-10 space-y-4 text-center">
+          <li><a href="#inicio" onClick={toggleMenu} className="block text-2xl font-semibold hover:text-verdeLima">Inicio</a></li>
+          <li><a href="#servicios" onClick={toggleMenu} className="block text-2xl font-semibold hover:text-verdeLima">Servicios</a></li>
+          <li><a href="#testimonios" onClick={toggleMenu} className="block text-2xl font-semibold hover:text-verdeLima">Testimonios</a></li>
+          <li><a href="#contacto" onClick={toggleMenu} className="block text-2xl font-semibold hover:text-verdeLima">Contacto</a></li>
         </ul>
       </aside>
     </header>
