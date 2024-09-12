@@ -12,8 +12,9 @@ function Footer() {
         <div className="flex justify-center space-x-4 mb-4">
           <a href="https://www.instagram.com/saborcubano10/" target="_blank" rel="noopener noreferrer" className="text-gray-700 flex hover:text-verdeLima transition-colors duration-300" aria-label="Instagram">
             <FaInstagram size={24} />
-            <span className="ml-2 font-semibold">Siga-nos no Instagram para mais delícias</span>
+            <span className="ml-2 font-semibold">Siga-nos no Instagram para que saiba mais</span>
           </a>
+
         </div>
 
         {/* Información adicional */}
