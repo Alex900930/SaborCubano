@@ -1,9 +1,10 @@
 import React, {useState, useEffect} from 'react';
+import { useNavigate } from 'react-router-dom';
 import cafe from '../assets/cafe.jpg';
 import suco from '../assets/jugos.jpg';
 import bolo from '../assets/pastel.jpg';
 
-function MainProyecto() {
+function MainProyecto({setMostrar}) {
 
  // Definimos las imágenes y los textos que van a cambiar
  const slides = [
@@ -24,7 +25,10 @@ function MainProyecto() {
     },
   ];
 
+  const navigate = useNavigate();
+
   const [currentSlide, setCurrentSlide] = useState(0);
+ 
 
 
    // Cambiamos la imagen cada 5 segundos
@@ -35,6 +39,11 @@ function MainProyecto() {
     return () => clearInterval(interval); // Limpiamos el intervalo al desmontar
   }, [slides.length]);
 
+  const handleClick = () => {
+    setMostrar(true)
+    //navigate('menu')
+  }
+
   return (
 <section
       className=" shadow-2xl rounded-xl col-span-2 bg-cover bg-center h-96 text-center flex items-center justify-center transition-all duration-500"
@@ -43,7 +52,7 @@ function MainProyecto() {
       <div className="bg-black bg-opacity-50 p-8 rounded-lg">
         <h2 className="text-4xl text-white font-bold">{slides[currentSlide].title}</h2>
         <p className="text-white mt-4">{slides[currentSlide].description}</p>
-        <button className="mt-6 bg-verdeLima text-white py-2 px-4 rounded-lg">
+        <button className="mt-6 bg-verdeLima text-white py-2 px-4 rounded-lg" onClick={handleClick}>
         Ver Menu
         </button>
       </div>

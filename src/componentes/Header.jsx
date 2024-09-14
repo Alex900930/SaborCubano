@@ -2,24 +2,31 @@ import React, {useState} from 'react';
 import logo from '../assets/LogoSaborCuabno.jpg';
 import { FaBars, FaTimes } from 'react-icons/fa';
 
-function Header() {
+function Header({setMostrar}) {
 
     const [isOpen, setIsOpen] = useState(false);
 
-  const toggleMenu = () => setIsOpen(!isOpen);
+  const toggleMenu = () => {
+    setIsOpen(!isOpen);
+    setMostrar(false);
+  }
+
+  const toggleMenu2 = () => {
+    setMostrar(false);
+  }
 
   return (
     <header className="bg-white shadow-md p-4 flex items-center justify-between h-20 border-b border-gray-200 col-span-2">
       {/* Sección izquierda del header (navegación) */}
       <nav className="flex-1 hidden md:flex justify-start">
         <ul className="flex space-x-6 text-gray-700">
-          <li><a href="#inicio" className="relative group font-semibold transition-colors duration-300 hover:text-verdeLima">Início</a></li>
-          <li><a href="#servicios" className="relative group font-semibold transition-colors duration-300 hover:text-verdeLima">Serviços</a></li>
+          <li><a href="#inicio" onClick={toggleMenu2} className="relative group font-semibold transition-colors duration-300 hover:text-verdeLima">Início</a></li>
+          <li><a href="#servicios" onClick={toggleMenu2} className="relative group font-semibold transition-colors duration-300 hover:text-verdeLima">Serviços</a></li>
         </ul>
       </nav>
 
       {/* Logo en el centro */}
-      <div className="flex-1 flex justify-center">
+      <div onClick={toggleMenu2} className="flex-1 flex justify-center">
         <img 
           src={logo} 
           alt="Logo"  
@@ -30,8 +37,8 @@ function Header() {
       {/* Sección derecha del header (navegación) */}
       <nav className="flex-1 hidden md:flex justify-end">
         <ul className="flex space-x-6 text-gray-700">
-          <li><a href="#testimonios" className="relative group font-semibold transition-colors duration-300 hover:text-verdeLima">Depoimentos</a></li>
-          <li><a href="#contacto" className="relative group font-semibold transition-colors duration-300 hover:text-verdeLima">Contato</a></li>
+          <li><a href="#testimonios" onClick={toggleMenu2} className="relative group font-semibold transition-colors duration-300 hover:text-verdeLima">Depoimentos</a></li>
+          <li><a href="#contacto" onClick={toggleMenu2} className="relative group font-semibold transition-colors duration-300 hover:text-verdeLima">Contato</a></li>
         </ul>
       </nav>
 

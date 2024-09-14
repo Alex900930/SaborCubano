@@ -1,26 +1,21 @@
 import './App.css'
-import Contactos from './componentes/Contactos'
-import Footer from './componentes/Footer'
-import Header from './componentes/Header'
-import MainProyecto from './componentes/MainProyecto'
-import Servicios from './componentes/Servicios'
-import Testimonios from './componentes/Testimonios'
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Layout from './componentes/Layout'
+import Menu from './componentes/pages/Menu'
 
 function App() {
   
 
   return (
     <>
-     <div className='grid sm:grid-cols-2 gap-2 m-6 h-[100vh] grid-cols-1 '>
-       <Header />
-       <MainProyecto />
-       <Servicios />
-       <Testimonios />
-       <Contactos />
-       <Footer />
 
-
-     </div>
+    <BrowserRouter>
+    <Routes>
+  <Route path="/" element={<Layout />} />
+  <Route path="/menu" element={<Menu />} />
+  <Route path="*" element={<Layout />} />
+</Routes>
+    </BrowserRouter>
        
     </>
   )
